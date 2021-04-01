@@ -1,0 +1,40 @@
+const getters = {
+  sidebar: state => state.app.sidebar,
+  language: state => state.app.language,
+  size: state => state.app.size,
+  device: state => state.app.device,
+  visitedViews: state => state.tagsView.visitedViews,
+  cachedViews: state => state.tagsView.cachedViews,
+  token: state => state.user.token,
+  avatar: state => state.user.avatar,
+  name: state => state.user.name, // 登陆人姓名
+  srnm: state => state.user.srnm, // 登陆人机构类型 0金融 1认证 2检测
+  userName: state => state.user.userName, // 登录账号
+  userId: state => state.user.userId, // 登陆人id
+  deptName: state => state.user.deptName, // 登陆人部门
+  rinm: state => state.user.rinm, // 登陆人部门
+  deptId: state => state.user.deptId, // 登陆人部门id
+  deptcode: state => state.user.deptcode, // 登陆人部门id
+  introduction: state => state.user.introduction,
+  status: state => state.user.status,
+  roles: state => state.user.roles,
+  rolecode: state => state.user.rolecode,
+  setting: state => state.user.setting,
+  permission_routers: state => state.permission.routers,
+  permissions_routers: state => state.user.permissions_routers,
+  addRouters: state => state.permission.addRouters,
+  errorLogs: state => state.errorLog.logs,
+  documentClientHeight: state => state.app.sidebar,
+  riid: state => state.user.riid, // 登陆人机构id
+  // 工作流
+  workFlow2business: state => state.workFlow.workFlow2business,
+  business2workFlow: state => state.workFlow.business2workFlow,
+  workFlowInfobusiness: state => state.workFlow.workFlowInfobusiness,
+  businessFlag: state => state.workFlow.businessFlag,
+  buttonData: state => state.workFlow.buttonData,
+  dialog: state => state.workFlow.dialog,
+  formContent: state => state.workFlow.formContent,
+  attachList: state => state.workFlow.attachList,
+  flowRecord: state => state.workFlow.flowRecord
+}
+export default getters

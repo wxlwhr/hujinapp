@@ -1,0 +1,446 @@
+@import "./variables.scss";
+@import "./mixin.scss";
+@import "./transition.scss";
+@import "./element-ui.scss";
+@import "./sidebar.scss";
+@import "./btn.scss";
+
+body {
+  height: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB,
+    Microsoft YaHei, Arial, sans-serif;
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+#app {
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.no-padding {
+  padding: 0px !important;
+}
+
+.padding-content {
+  padding: 4px 0;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+div:focus {
+  outline: none;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  margin: 0 0 15px 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+.el-select{
+  width:100%;
+}
+.hrStyle{
+  background-color:#DCDFE6;
+  height: 1px;
+  border: none;
+}
+.el-timeline-item__tail{
+  left: 8px;
+}
+.el-timeline-item__node--normal{
+  width: 20px;
+  height: 20px;
+}
+.el-tooltip__popper{
+  max-width: 50%;
+}
+.el-card{
+  position: relative;
+  overflow:inherit;
+  .el-card__body {
+    overflow:inherit;
+    min-height:calc(100vh - 144px);
+  }
+  // elCard 标题home
+  .el-card__header{
+    padding:12px 20px;
+    height: 32px;
+    box-sizing: content-box;
+    line-height: 32px;
+    font-weight: 700;
+  }
+  .back {
+    width: 47px;
+    height: 47px;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .el-card__header .btnCard{
+    height: 32px;
+    box-sizing: content-box;
+    line-height: 32px;
+  }
+  .elCardBtnBox{
+    float: right;
+  }
+}
+.el-image-viewer__mask{
+  opacity: 1;
+  background: #fff;
+}
+.el-table{
+  font-size: 12px;
+  text-align: center;
+}
+.el-table th{
+  background-color: #fafafa;
+  text-align: center;
+  padding: 16px 0;
+  font-size: 14px;
+  font-weight:bold;
+}
+.el-table td{
+  padding: 8px 0;
+  font-size: 14px;
+}
+.el-table .cell{
+  text-align: center;
+  color: #333;
+}
+.el-range-editor--medium.el-input__inner{
+  width: 100%;
+}
+.el-table .el-loading-spinner .el-icon-loading{
+  width: 65px;
+  height: 65px;
+  animation: loading-rotate 2s linear infinite;
+  display: none;
+}
+.el-table .el-loading-spinner,.el-tree .el-loading-spinner{
+  background:  url(../assets/loading.gif) no-repeat;
+  background-size: 65px 65px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 50%;
+  left: 45%;
+}
+.el-loading-mask{
+  background: #fff !important;
+  // opacity: 0.7;
+  filter: opacity(70%);
+  // z-index: 3000 !important;
+}
+.el-loading-spinner{
+  background:  url(../assets/loading.gif) no-repeat;
+  background-size:100% 100%;
+  width: 60px;
+  height: 60px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  margin-top: -20px;
+  margin-left: -20px;
+  i{
+  display: none !important;
+  visibility: hidden;
+  }
+  .el-loading-text{
+    display: none;
+  }
+  .circular{
+    display: none;
+  }
+} 
+.el-loading-mask .el-loading-spinner i{display: none !important;}
+.el-autocomplete{
+  width:100%
+}
+
+.fr {
+  float: right;
+}
+
+.fl {
+  float: left;
+}
+
+.pr-5 {
+  padding-right: 5px;
+}
+
+.pl-5 {
+  padding-left: 5px;
+}
+
+.block {
+  display: block;
+}
+.textLeft{
+  text-align: left;
+}
+.textRight{
+  text-align: right;
+}
+
+.pointer {
+  cursor: pointer;
+}
+.el-date-editor.el-input, .el-date-editor.el-input__inner{
+  width:100%;
+}
+// 重写disabled状态下文字的颜色
+.el-input.is-disabled .el-input__inner{
+  color:#333;
+}
+.el-checkbox__input.is-disabled.is-checked .el-checkbox__inner{
+  color:#333;
+  border-color:#333;
+}
+.el-checkbox__input.is-disabled.is-checked .el-checkbox__inner::after{
+  border-color:#333;
+}
+.el-radio__input.is-disabled.is-checked .el-radio__inner{
+  color:#333;
+  border-color:#333;
+}
+.el-radio__input.is-disabled.is-checked .el-radio__inner::after{
+  background-color:#333;
+}
+.el-range-editor.is-disabled input{
+  color:#333;
+}
+.el-range-editor.is-disabled .el-range-separator{
+  color:#333;
+}
+.el-textarea.is-disabled .el-textarea__inner{
+  color:#333;
+}
+.inlineBlock {
+  display: block;
+}
+.avatar-uploader .el-upload {
+  border: 1px dashed #d9d9d9;
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.avatar-uploader .el-upload:hover {
+  border-color: #409EFF;
+}
+.avatar-uploader-icon {
+  font-size: 28px;
+  color: #8c939d;
+  width: 150px;
+  height: 150px;
+  line-height: 150px;
+  text-align: center;
+}
+.avatar {
+  width: 150px;
+  height: 150px;
+  display: block;
+}
+.el-dialog__body{
+  padding: 0 20px;
+ }
+.fieldsetStyle{
+  width: 1100px;
+  margin: 12px auto;
+  border-color: #a2b9f0;
+  border-radius: 6px 6px;
+  padding: 30px 50px;
+}
+.clearfix {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+
+code {
+  background: #eef1f6;
+  padding: 15px 16px;
+  margin-bottom: 20px;
+  display: block;
+  line-height: 36px;
+  font-size: 15px;
+  font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+  a {
+    color: #337ab7;
+    cursor: pointer;
+    &:hover {
+      color: rgb(32, 160, 255);
+    }
+  }
+}
+
+.warn-content {
+  background: rgba(66, 185, 131, 0.1);
+  border-radius: 2px;
+  padding: 16px;
+  padding: 1rem;
+  line-height: 1.6rem;
+  word-spacing: 0.05rem;
+  a {
+    color: #42b983;
+    font-weight: 600;
+  }
+}
+
+//main-container全局样式
+.app-container {
+  padding: 20px;
+}
+
+.components-container {
+  margin: 30px 50px;
+  position: relative;
+}
+
+.pagination-container {
+  margin-top: 30px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.sub-navbar {
+  height: 50px;
+  line-height: 50px;
+  position: relative;
+  width: 100%;
+  text-align: right;
+  padding-right: 20px;
+  transition: 600ms ease position;
+  background: linear-gradient(
+    90deg,
+    rgba(32, 182, 249, 1) 0%,
+    rgba(32, 182, 249, 1) 0%,
+    rgba(33, 120, 241, 1) 100%,
+    rgba(33, 120, 241, 1) 100%
+  );
+  .subtitle {
+    font-size: 20px;
+    color: #fff;
+  }
+  &.draft {
+    background: #d0d0d0;
+  }
+  &.deleted {
+    background: #d0d0d0;
+  }
+}
+
+.link-type,
+.link-type:focus {
+  color: #337ab7;
+  cursor: pointer;
+  &:hover {
+    color: rgb(32, 160, 255);
+  }
+}
+
+.filter-container {
+  padding-bottom: 10px;
+  .filter-item {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 10px;
+  }
+}
+
+//refine vue-multiselect plugin
+.multiselect {
+  line-height: 16px;
+}
+
+.multiselect--active {
+  z-index: 1000 !important;
+}
+
+/** 分隔符样式 **/
+.divider {
+  height: 1px;
+  margin: 20px 0;
+  background: #e8e8e8;
+  box-sizing: border-box;
+  padding: 0;
+
+  // 实线分隔符样式  ## <div class="divider divider-horizontal"></div>
+  &.divider-horizontal {
+    display: block;
+  }
+
+  // 虚线分隔符 ## <div class="divider divider-dashed"></div>
+  &.divider-dashed {
+    background: none;
+    border-top: 1px dashed #e8e8e8;
+  }
+}
+
+// 竖线分割线
+.split{
+  background-color: rgb(232, 232, 232);
+  position: absolute;
+  top: 30%;
+  right: 0px;
+  width: 2px;
+  height: 40%;
+}
+
+// 全局 ul li 排列在一行的布局
+.ul-inline {
+  margin-left: auto;
+  li {
+    padding:0 16px;
+    position: relative;
+    float: left;
+  }
+  & li:first-child {
+    padding-left: 0px;
+  }
+  & li:last-child {
+    padding-right: 0px;
+  }
+  .li-br{
+      border-right: 1px solid rgb(232, 232, 232);
+    }
+  .li-bl{
+      border-left: 1px solid rgb(232, 232, 232);
+    }
+}
